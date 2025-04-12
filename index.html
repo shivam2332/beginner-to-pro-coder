@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner to Pro Coder Roadmap</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1a73e8, #34c759);
+            color: #fff;
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 15px 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        nav.dark {
+            background: #2d2d2d;
+            box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+        }
+
+        nav a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1em;
+        }
+
+        nav a:hover {
+            color: #0d47a1;
+        }
+
+        nav.dark a {
+            color: #4a90e2;
+        }
+
+        nav.dark a:hover {
+            color: #80bfff;
+        }
+
+        section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        section.dark {
+            background: #2d2d2d;
+            box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+        }
+
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            border-radius: 2px;
+        }
+
+        #getting-started h2::after { background: #34c759; }
+        #leveling-up h2::after { background: #ff5733; }
+        #projects-github h2::after { background: #1a73e8; }
+        #open-source-hackathons h2::after { background: #f4c20d; }
+        #internships-placements h2::after { background: #9b59b6; }
+        #keep-growing h2::after { background: #e91e63; }
+        #resources h2::after { background: #00bcd4; }
+
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .dark a {
+            color: #4a90e2;
+        }
+
+        .toggle-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1100;
+        }
+
+        #theme-toggle {
+            background: #1a73e8;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        #theme-toggle:hover {
+            background: #0d47a1;
+        }
+
+        .dark #theme-toggle {
+            background: #4a90e2;
+        }
+
+        .dark #theme-toggle:hover {
+            background: #80bfff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .dark footer {
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 10px;
+                padding: 10px;
+            }
+
+            nav a {
+                font-size: 1em;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            section h2 {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="toggle-container">
+        <button id="theme-toggle">🌙 Dark Mode</button>
+    </div>
+
+    <header>
+        <h1>Beginner to Pro Coder Roadmap</h1>
+        <p>Your step-by-step guide from zero to a professional coder, covering basics, projects, open source, internships, and beyond!</p>
+    </header>
+
+    <nav>
+        <a href="#getting-started">Getting Started</a>
+        <a href="#leveling-up">Leveling Up</a>
+        <a href="#projects-github">Projects & GitHub</a>
+        <a href="#open-source-hackathons">Open Source & Hackathons</a>
+        <a href="#internships-placements">Internships & Placements</a>
+        <a href="#keep-growing">Keep Growing</a>
+        <a href="#resources">Resources</a>
+    </nav>
+
+    <div class="container">
+        <section id="getting-started">
+            <h2>👶 Getting Started (Beginner)</h2>
+            <p><strong>What is Programming?</strong> Programming is telling a computer what to do using languages it understands. It’s like giving step-by-step instructions to solve problems or build apps.</p>
+            <p><strong>Best Languages to Start With:</strong></p>
+            <ul>
+                <li><strong>Python</strong>: Simple syntax, great for beginners (data science, web, automation).</li>
+                <li><strong>C++</strong>: Powerful, used in competitive programming and games.</li>
+                <li><strong>Java</strong>: Versatile, widely used in enterprise and Android apps.</li>
+            </ul>
+            <p><strong>Learn the Basics:</strong></p>
+            <ul>
+                <li>Variables: Store data (e.g., numbers, text).</li>
+                <li>Loops: Repeat tasks (for, while).</li>
+                <li>Functions: Reusable code blocks.</li>
+                <li>Arrays: Lists of data.</li>
+                <li>Strings: Text manipulation.</li>
+            </ul>
+            <p><strong>Tools:</strong></p>
+            <ul>
+                <li><a href="https://code.visualstudio.com/">VS Code</a>: Lightweight code editor with extensions.</li>
+                <li><a href="https://replit.com/">Replit</a>: Online coding platform, no setup needed.</li>
+                <li><a href="https://github.com/">GitHub</a>: Host and share your code.</li>
+            </ul>
+            <p><strong>Useful Platforms:</strong></p>
+            <ul>
+                <li><a href="https://www.w3schools.com/">W3Schools</a>: Free tutorials for web dev basics.</li>
+                <li><a href="https://www.geeksforgeeks.org/">GeeksforGeeks</a>: Beginner-friendly DSA and coding.</li>
+                <li><a href="https://www.youtube.com/@ApnaCollegeOfficial">Apna College</a>: Hindi/English coding tutorials.</li>
+                <li><a href="https://www.youtube.com/@CodeWithHarry">CodeWithHarry</a>: Practical coding in Hindi.</li>
+            </ul>
+        </section>
+
+        <section id="leveling-up">
+            <h2>🚀 Leveling Up: DSA + Competitive Programming</h2>
+            <p>Master Data Structures and Algorithms (DSA) to solve complex problems efficiently and excel in coding contests.</p>
+            <p><strong>Data Structures:</strong></p>
+            <ul>
+                <li>Arrays: Store multiple items.</li>
+                <li>Stacks & Queues: Manage data in LIFO/FIFO order.</li>
+                <li>Linked Lists: Dynamic data chains.</li>
+                <li>Trees: Hierarchical data (e.g., Binary Trees).</li>
+                <li>Graphs: Networks of nodes and edges.</li>
+            </ul>
+            <p><strong>Algorithms:</strong></p>
+            <ul>
+                <li>Sorting: Bubble, Merge, Quick Sort.</li>
+                <li>Searching: Binary Search, DFS, BFS.</li>
+                <li>Recursion: Solve problems by breaking them down.</li>
+                <li>Dynamic Programming: Optimize overlapping subproblems.</li>
+            </ul>
+            <p><strong>Competitive Programming Platforms:</strong></p>
+            <ul>
+                <li><a href="https://leetcode.com/">LeetCode</a>: Practice interview-style questions.</li>
+                <li><a href="https://codeforces.com/">Codeforces</a>: Contests for all levels.</li>
+                <li><a href="https://www.geeksforgeeks.org/">GFG</a>: DSA problems with explanations.</li>
+                <li><a href="https://atcoder.jp/">AtCoder</a>: Beginner-friendly contests.</li>
+            </ul>
+            <p><strong>Tips:</strong></p>
+            <ul>
+                <li>Solve 1-2 problems daily to build problem-solving skills.</li>
+                <li>Start with easy problems, then tackle medium/hard.</li>
+                <li>Understand time/space complexity for efficient code.</li>
+            </ul>
+        </section>
+
+        <section id="projects-github">
+            <h2>🛠️ Real Projects & GitHub</h2>
+            <p>Build projects to apply your skills and showcase your work on GitHub.</p>
+            <p><strong>Web Development:</strong></p>
+            <ul>
+                <li>HTML & CSS: Structure and style webpages.</li>
+                <li>JavaScript: Add interactivity.</li>
+                <li>React: Build dynamic UIs.</li>
+                <li>Node.js: Create backends.</li>
+            </ul>
+            <p><strong>App Development:</strong></p>
+            <ul>
+                <li><a href="https://flutter.dev/">Flutter</a>: Cross-platform apps (iOS/Android).</li>
+                <li><a href="https://developer.android.com/studio">Android Studio</a>: Native Android apps.</li>
+            </ul>
+            <p><strong>Git & GitHub:</strong></p>
+            <ul>
+                <li>Learn version control: `git commit`, `git push`.</li>
+                <li>Host projects on GitHub for visibility.</li>
+                <li>Create a portfolio repo to display your work.</li>
+            </ul>
+            <p><strong>Project Ideas:</strong></p>
+            <ul>
+                <li>To-Do App: Manage tasks.</li>
+                <li>Portfolio: Showcase your projects.</li>
+                <li>E-Commerce Clone: Mimic Amazon/Flipkart.</li>
+            </ul>
+        </section>
+
+        <section id="open-source-hackathons">
+            <h2>🌍 Open Source & Hackathons</h2>
+            <p>Contribute to real-world projects and compete in hackathons to gain experience.</p>
+            <p><strong>Getting Started with Open Source:</strong></p>
+            <ul>
+                <li><a href="https://hacktoberfest.com/">Hacktoberfest</a>: Contribute in October for swag.</li>
+                <li>Good First Issues: Beginner-friendly bugs on GitHub.</li>
+            </ul>
+            <p><strong>Platforms:</strong></p>
+            <ul>
+                <li><a href="https://github.com/">GitHub</a>: Find open-source projects.</li>
+                <li><a href="https://summerofcode.withgoogle.com/">GSoC</a>: Paid summer contributions.</li>
+                <li><a href="https://girlscript.github.io/gssoc/">GirlScript</a>: Women-focused open source.</li>
+                <li><a href="https://devincept.com/">DevIncept</a>: Mentored contributions.</li>
+            </ul>
+            <p><strong>Hackathons:</strong></p>
+            <ul>
+                <li><a href="https://devpost.com/">Devpost</a>: Global hackathon listings.</li>
+                <li><a href="https://mlh.io/">MLH</a>: Student-focused events.</li>
+                <li><a href="https://www.hackerearth.com/">HackerEarth</a>: Coding challenges and hackathons.</li>
+            </ul>
+        </section>
+
+        <section id="internships-placements">
+            <h2>💼 Internships & Placements</h2>
+            <p>Prepare for jobs with a strong resume, online presence, and interview skills.</p>
+            <p><strong>Resume Building:</strong></p>
+            <ul>
+                <li>Highlight projects, skills, and certifications.</li>
+                <li>Use tools like Canva or Overleaf for professional designs.</li>
+            </ul>
+            <p><strong>LinkedIn Profile:</strong></p>
+            <ul>
+                <li>Add projects, skills, and a professional photo.</li>
+                <li>Connect with recruiters and alumni.</li>
+            </ul>
+            <p><strong>Practice Interview Questions:</strong></p>
+            <ul>
+                <li>DSA: Arrays, Trees, Graphs, DP.</li>
+                <li>CS Subjects: OS, DBMS, Networks.</li>
+            </ul>
+            <p><strong>Resources:</strong></p>
+            <ul>
+                <li><a href="https://www.geeksforgeeks.org/">GFG</a>: Interview prep articles.</li>
+                <li><a href="https://www.interviewbit.com/">InterviewBit</a>: Mock interviews.</li>
+                <li><a href="https://takeuforward.org/strivers-sde-sheet-top-coding-interview-problems/">Striver Sheet</a>: Curated DSA problems.</li>
+            </ul>
+            <p><strong>Apply On:</strong></p>
+            <ul>
+                <li><a href="https://internshala.com/">Internshala</a>: Internships for students.</li>
+                <li><a href="https://linkedin.com/">LinkedIn</a>: Job postings.</li>
+                <li><a href="https://angel.co/">AngelList</a>: Startup jobs.</li>
+                <li><a href="https://www.unstop.com/">Unstop</a>: Competitions and jobs.</li>
+            </ul>
+        </section>
+
+        <section id="keep-growing">
+            <h2>🌈 After Placement - Keep Growing!</h2>
+            <p>Continue learning and contributing to stay ahead in tech.</p>
+            <p><strong>Advanced Topics:</strong></p>
+            <ul>
+                <li>System Design: Scalable architectures.</li>
+                <li>DevOps: CI/CD, Docker, AWS.</li>
+                <li>AI/ML: TensorFlow, PyTorch.</li>
+            </ul>
+            <p><strong>Freelancing:</strong></p>
+            <ul>
+                <li><a href="https://fiverr.com/">Fiverr</a>: Small gigs.</li>
+                <li><a href="https://upwork.com/">Upwork</a>: Long-term projects.</li>
+                <li><a href="https://toptal.com/">Toptal</a>: High-end clients.</li>
+            </ul>
+            <p><strong>Teaching:</strong></p>
+            <ul>
+                <li>Blogging: Share tutorials on Medium or Dev.to.</li>
+                <li>YouTube: Create coding videos.</li>
+                <li>Course Creation: Udemy, Teachable.</li>
+            </ul>
+            <p><strong>Contribute Back:</strong></p>
+            <ul>
+                <li>Maintain open-source projects.</li>
+                <li>Mentor beginners on Discord or forums.</li>
+                <li>Join or start tech communities (e.g., local meetups).</li>
+            </ul>
+        </section>
+
+        <section id="resources">
+            <h2>📚 Bonus Resources</h2>
+            <p>Explore these to accelerate your learning:</p>
+            <p><strong>Books:</strong></p>
+            <ul>
+                <li><em>Clean Code</em> by Robert C. Martin: Write better code.</li>
+                <li><em>Cracking the Coding Interview</em> by Gayle Laakmann McDowell: Ace interviews.</li>
+            </ul>
+            <p><strong>YouTube Channels:</strong></p>
+            <ul>
+                <li><a href="https://www.youtube.com/@ApnaCollegeOfficial">Apna College</a>: Beginner-friendly tutorials.</li>
+                <li><a href="https://www.youtube.com/@CodeWithHarry">CodeWithHarry</a>: Practical coding.</li>
+                <li><a href="https://www.youtube.com/@TechWithTim">Tech With Tim</a>: Python and projects.</li>
+            </ul>
+            <p><strong>Websites:</strong></p>
+            <ul>
+                <li><a href="https://roadmap.sh/">roadmap.sh</a>: Visual learning paths.</li>
+                <li><a href="https://awesomeopensource.com/">awesomeopensource.com</a>: Open-source resources.</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>Created for aspiring coders | Bookmark this roadmap and start your journey! 🚀</p>
+        </footer>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+        const nav = document.querySelector('nav');
+        const sections = document.querySelectorAll('section');
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            nav.classList.toggle('dark');
+            sections.forEach(section => section.classList.toggle('dark'));
+            toggleButton.textContent = body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+        });
+    </script>
+</body>
+</html>
